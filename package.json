@@ -1,0 +1,37 @@
+{
+  "name": "@dreagonmon/vault-manager",
+  "version": "1.0.0",
+  "description": "Encrypted credential vault for DeepSeek Harness: secrets and master password are typed only in a user popup, commands run with {{placeholder}} substitution after approval, output is redacted — nothing secret reaches the agent context.",
+  "license": "MIT",
+  "author": "Dreagonmon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dreagonmon/vault-manager.git"
+  },
+  "keywords": ["dsh", "dsh-bundle", "dsh-plugin", "credentials", "secrets", "vault", "security"],
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0",
+    "dsh": ">=0.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./README.md": "./README.md",
+    "./README.zh.md": "./README.zh.md"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "README.zh.md", "LICENSE"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-locale"]
+    }
+  }
+}

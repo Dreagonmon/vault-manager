@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Credential vault",
+    "description": "Stores secrets encrypted with a master password; commands run with injected secrets after the user approves in a popup.",
+    "detail": "README.md"
+  }
+}
